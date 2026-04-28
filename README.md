@@ -8,7 +8,7 @@ To clone the repository, use the following command:
 git clone --recurse-submodules https://github.com/cs-pub-ro/systems-testing.git
 ```
 
-To fetch all branches:
+To fetch all branches lol:
 ```bash
 git submodule foreach --recursive git fetch --all
 ```
