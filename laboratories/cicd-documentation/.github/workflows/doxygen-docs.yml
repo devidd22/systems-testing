@@ -1,0 +1,21 @@
+name: Generate Doxygen Documentation
+
+on:
+  push:
+    tags:
+      - 'v*'  # Rulează doar la tag-uri de tip v1.0, v2.1, etc.
+
+jobs:
+  doxygen:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Doxygen
+      run: sudo apt-get update && sudo apt-get install -y doxygen
+    - name: Run Doxygen
+      run: doxygen Doxyfile
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Documentation
+        path: html/  
